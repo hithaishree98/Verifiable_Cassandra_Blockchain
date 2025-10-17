@@ -80,30 +80,6 @@ Clients can read this on-chain root to verify whether their data from Cassandra 
 
 ## 4. Setup Instructions
 
-Follow these steps to run the project.  
-Save them in a separate `readme.txt` or use directly in this README.
+ 
+Saved them in a separate `readme.txt` 
 
-```bash
-# 1. Install dependencies
-sudo apt-get update
-sudo apt-get install -y python3-pip
-python3 -m pip install -U pip
-pip3 install cassandra-driver merkletools py-solc-x web3==5.31.4
-
-# 2. Install Solidity compiler (optional if not auto-installed)
-python3 - <<'PY'
-from solcx import install_solc, set_solc_version
-install_solc('0.8.26')
-set_solc_version('0.8.26')
-print("solc 0.8.26 installed")
-PY
-
-# 3. Start Ganache (Ethereum local blockchain)
-ganache
-
-# 4. Start Cassandra database
-sudo service cassandra stop || true
-sudo service cassandra start
-
-# 5. Run the main driver
-python3 driver.py
